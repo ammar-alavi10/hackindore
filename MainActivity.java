@@ -3,6 +3,7 @@ package com.ammar.restapitry;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         call.enqueue(new Callback<Day>() {
             @Override
             public void onResponse(Call<Day> call, Response<Day> response) {
-                Log.d("restapi","Result "+response.body().getPlay());
+                Toast.makeText(MainActivity.this,response.body().getPlay(),Toast.LENGTH_LONG).show();
             }
 
             @Override
